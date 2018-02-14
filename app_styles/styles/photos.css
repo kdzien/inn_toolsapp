@@ -1,0 +1,19 @@
+.content-child{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#watermarkimg{
+	width:300px;
+}
+form{
+	margin:15px 0px;
+}
+form input{
+	margin:5px 0px;
+}
+
+#photosInfo{
+
+}

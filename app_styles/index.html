@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="ISO-8859-1">
+    <title>DayCompany</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/photos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body style="">
+    <div class="menu" >\
+      <i class="material-icons" id="minimalizeWindow">system_update_alt</i>
+      <i class="material-icons" id="closeWindow">power_settings_new</i>
+    </div>
+  	<div id="header">
+  		<button class="btn" id="httpsButton" data-id="httpscontent">HTTPS</button>
+  		<!-- <button class="btn" id="fotosButton" data-id="fotoscontent">ZNAK WODNY</button> -->
+      <button class="btn" id="miniaturesButton" data-id="miniaturescontent">MINIATURKI</button>
+      <button class="btn" id="miniaturesButton" data-id="adresycontent">ADRESY</button>
+  	</div>
+  	<div id="content">
+  		<div class="content-child" id="httpscontent">
+			<div>
+				<div class="form-group">
+				<label for="sel1">Wybierz usera</label>
+					<select class="form-control" id="httpsUserSelect">
+						<option>eternal-store</option>
+						<option>grenico-fr</option>
+						<option>trade-express-ug</option>
+						<option>grenico-ohg</option>
+						<option>online-depot-ohg</option>
+            <option>grenico-ltd</option>
+            <option>west-gate-ltd</option>
+					</select>
+				</div>
+				<p id="httpsInfo">--informacja--</p>
+				<p id="httpsFound">Znaleziono : 0 </p>
+			</div>
+			<div>
+				<button id="httpsButtonStart" type="button" class="btn btn-primary">Start</button>
+			</div>
+      <h4>Wyniki pojawia sie w tabeli konradd.brak_http</h4>
+  		</div>
+  		<div class="content-child" id="fotoscontent">
+  			<img id="watermarkimg" src="" alt="wybierz znak wodny"/>
+          <form>  
+            <input type="file" id="fileInput" accept="image/*">
+
+            <label for="sel1">Przezroczystosc</label>
+            <input type='range' id="opacityRange" / >
+            <label for="sel1">Wielkosc znaku (im mniej tym wiekszy znak wodny, % wzgledem szerokosci)</label>
+            <input type='range' id="sizeRange" / >
+
+            <label for="sel1">Wybierz pozycje</label>
+              <select class="form-control" id="positionSelect">
+                <option>srodek</option>
+                <option>gora-lewo</option>
+                <option>gora-prawo</option>
+                <option>dol-lewo</option>
+                <option>dol-prawo</option>
+              </select>
+          </form>
+          <p id="photosInfo"></p>
+        <button class="btn btn-primary" id="selectWatermark">Uruchom</button>
+  		</div>
+      <div class="content-child" id="miniaturescontent">
+          <p id="miniaturesUserInfo">--Info o userze--</p>
+          <p id="currentMiniatures">--Info o obecnej stronie--</p>
+          <button class="btn btn-primary" id="runMiniatures">Sprawdz miniaturki</button>
+      </div>
+      <div class="content-child" id="adresycontent">
+
+      <div>
+        <div class="form-group">
+        <label for="sel1">Wybierz usera</label>
+          <select class="form-control" id="adressUserSelect">
+            <option>eternal-store</option>
+            <option>trade-express-ug</option>
+            <option>grenico-ohg</option>
+            <option>online-depot-ohg</option>
+          </select>
+        </div>
+        <p id="adressInfo">--informacja--</p>
+      </div>
+      <div>
+        <button id="runAdresses" type="button" class="btn btn-primary">Sprawdz adresy</button>
+      </div>
+      </div>
+  	</div>
+  </body>
+
+  <script src="https://use.fontawesome.com/22ab09c0fb.js"></script>
+  <script src="viewscript.js"></script>
+  <script src="../app.js"></script>
+
+</html>

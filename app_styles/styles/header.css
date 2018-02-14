@@ -1,0 +1,47 @@
+.menu{
+	-webkit-app-region: drag;
+	padding: 3px;
+    background-color: #313131;
+    text-align: right;
+}
+.menu i{
+	-webkit-app-region: no-drag;
+    font-size: 23px;
+    color:black;
+    cursor:pointer;
+}
+.menu i:hover{
+	color:red;
+}
+.menu i:first-child:hover{
+	color:blue;
+}
+
+#header{
+	display:flex;
+}
+#header button{
+	width:50%;
+	margin:0;
+	border-radius:0;
+	background-color:#454545;
+	color:white;
+}
+#header button:hover{
+	opacity:0.7;
+}
+
+.content-child{
+	display:none;
+}
+
+.show{
+	display:block;
+}
+.buttonOpacity{
+	opacity:0.7;
+}
+
+#content{
+	margin:30px;
+}
