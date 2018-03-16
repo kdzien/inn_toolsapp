@@ -2,6 +2,8 @@
 var miniatures = require("../miniatures/main.js")
 var https = require("../https_checker/main.js")
 var adressess = require("../adressess/main.js")
+var shopcats = require("../shopcat/main.js")
+var watermark = require("../watermark/nakladacz_znaku.js")
 
 //sprawdzenie httpsow
 document.getElementById("httpsButtonStart").addEventListener("click",function(){
@@ -40,6 +42,7 @@ document.getElementById("runAdresses").addEventListener("click",function(){
     button.disabled=true;
     var e = document.getElementById("adressUserSelect");
     var text = e.options[e.selectedIndex].text;
+    console.log(text)
     adressess.runScript(text,()=>{
         clearInterval(adressesInterval);
         button.disabled=false;
@@ -48,3 +51,44 @@ document.getElementById("runAdresses").addEventListener("click",function(){
         document.getElementById("adressInfo").innerHTML=`${adressess.getCurrentAuction()} z ${adressess.getTotalAuctions()}`
     },1000)
 })
+
+//generowanie shopcatow
+document.getElementById("runShopcat").addEventListener("click",function(){
+    //var button = this;
+    //button.disabled=true;
+    var es = document.getElementById("shopcatProductSelect");
+    var product = es.options[es.selectedIndex].text;
+    var e = document.getElementById("shopcatArea");
+    var sku_array = e.value.split("\n");
+    shopcats.generateShopcats(product,sku_array,result=>{
+        console.log(result)
+    })
+})
+
+
+var image = document.getElementById("watermarkimg")
+var selectedpath;
+var opacity;
+var size;
+//znak wodny
+document.getElementById('fileInput').onchange = function () {
+    selectedpath=this.value
+	image.src=this.value
+};
+
+document.getElementById("opacityRange").addEventListener("input",function(){
+	opacity=this.value
+	image.style.opacity=this.value/100
+})
+document.getElementById("selectWatermark").addEventListener("click", function(){
+    var e = document.getElementById("positionSelect");
+    var text = e.options[e.selectedIndex].text;
+    console.log(`${selectedpath},${opacity},${size},${text}`)
+    watermark.generatePhotos(selectedpath,opacity,size,text,()=>{
+        console.log("gotowe")
+    })
+})
+document.getElementById("sizeRange").addEventListener("input",function(){
+    size=this.value;
+})
+

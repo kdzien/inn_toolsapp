@@ -41,15 +41,17 @@ var checkAuctions = function(elements,callback){
 			  }
 			},
 			function(error, data) {
+				
 				if(error){
 					console.log(" Aukcja nr: " + elements[n].auction_id.toString()+" "+error )
 					n++;
 					asyc();
 				}
-				else if((data.Item.Description).indexOf("http://")!==-1){
+				else if((data.Item.Description.replace(/\r?\n?/g, '').trim()).indexOf("<!-- mobile -->")==-1){
 					founded++;
 					var inserQuery = "insert into konradd.brak_https (auction_id,user_id) values ('"+elements[n].auction_id+"','NA'"+")"
-					db.connection.query(inserQuery, function (err, result) {
+					console.log("zle description")
+						db.connection.query(inserQuery, function (err, result) {
 						n++;
 						asyc()
 					});
@@ -64,7 +66,9 @@ var checkAuctions = function(elements,callback){
 		}
 	})()
 }
-
-module.exports.runScript = runScript
-module.exports.getCurrentAuction = getCurrentAuction
-module.exports.getTotalElements = getTotalElements
+runScript('trade-express-ug',function(){
+	console.log("xd")
+})
+// module.exports.runScript = runScript
+// module.exports.getCurrentAuction = getCurrentAuction
+// module.exports.getTotalElements = getTotalElements

@@ -2,7 +2,7 @@
 <html>
   <head>
   	<meta charset="ISO-8859-1">
-    <title>DayCompany</title>
+    <title>Inntrade_tools</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/photos.css">
@@ -16,10 +16,11 @@
     </div>
   	<div id="header">
   		<button class="btn" id="httpsButton" data-id="httpscontent">HTTPS</button>
-  		<!-- <button class="btn" id="fotosButton" data-id="fotoscontent">ZNAK WODNY</button> -->
+  		<button class="btn" id="fotosButton" data-id="fotoscontent">ZNAK WODNY</button>
       <button class="btn" id="miniaturesButton" data-id="miniaturescontent">MINIATURKI</button>
       <button class="btn" id="miniaturesButton" data-id="adresycontent">ADRESY</button>
-  	</div>
+      <button class="btn" id="miniaturesButton" data-id="shopcatycontent">SHOPACTY</button>
+    </div>
   	<div id="content">
   		<div class="content-child" id="httpscontent">
 			<div>
@@ -47,7 +48,6 @@
   			<img id="watermarkimg" src="" alt="wybierz znak wodny"/>
           <form>  
             <input type="file" id="fileInput" accept="image/*">
-
             <label for="sel1">Przezroczystosc</label>
             <input type='range' id="opacityRange" / >
             <label for="sel1">Wielkosc znaku (im mniej tym wiekszy znak wodny, % wzgledem szerokosci)</label>
@@ -63,7 +63,7 @@
               </select>
           </form>
           <p id="photosInfo"></p>
-        <button class="btn btn-primary" id="selectWatermark">Uruchom</button>
+          <button class="btn btn-primary" id="selectWatermark">Uruchom</button>
   		</div>
       <div class="content-child" id="miniaturescontent">
           <p id="miniaturesUserInfo">--Info o userze--</p>
@@ -88,6 +88,18 @@
         <button id="runAdresses" type="button" class="btn btn-primary">Sprawdz adresy</button>
       </div>
       </div>
+
+      <div class="content-child" id="shopcatycontent">
+          <select class="form-control" id="shopcatProductSelect">
+              <option>dywanyG</option>
+              <option>dywanyR</option>
+              <option>dywanyW</option>
+              <option>dywanyS</option>
+            </select>
+        <textarea id="shopcatArea" rows="25" cols="40"></textarea>
+        <button id="runShopcat" type="button" class="btn btn-primary">shopcatIT!</button>
+      </div>
+
   	</div>
   </body>
 
